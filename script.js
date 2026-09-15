@@ -1,6 +1,6 @@
 /* ===================================================
    YATHARTH TOUR AND TRAVELS — MAIN JAVASCRIPT
-   Organized in clearly labeled sections.
+   Firebase Firestore + WhatsApp + i18n (EN/HI/Hinglish)
    =================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /* =================================================
      SECTION 3: SCROLL REVEAL ANIMATIONS
      ================================================= */
-  // Automatically add "reveal" class to key elements
   const revealTargets = document.querySelectorAll(
     '.feature-card, .pricing-card, .facility-card, .step-card, .destination-card, .document-card, .contact-card, .timeline-item, .video-feature'
   );
@@ -102,14 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Show all destination cards by default on page load
   applyFilter('all');
 
 
   /* =================================================
      SECTION 5: DOCUMENT (PDF) LINK CHECK
-     If a PDF file does not exist yet in /documents/,
-     disable the button instead of showing a broken link.
      ================================================= */
   const docLinks = document.querySelectorAll('.doc-link');
 
@@ -117,14 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const url = link.getAttribute('href');
     fetch(url, { method: 'HEAD' })
       .then(function (res) {
-        if (!res.ok) {
-          disableDocLink(link);
-        }
+        if (!res.ok) disableDocLink(link);
       })
       .catch(function () {
-        // If fetch fails (e.g. running file:// locally, or file missing),
-        // we can't confirm the file exists — leave the link as-is so it
-        // still works once uploaded to a real server, but mark it just in case.
+        // file:// ya network issue — link as-is chhod do
       });
   });
 
@@ -138,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* =================================================
-     SECTION 6: FORM VALIDATION
+     SECTION 6: FORM VALIDATION + FIREBASE SAVE + WHATSAPP
      ================================================= */
   const form = document.getElementById('quoteForm');
   const successMsg = document.getElementById('formSuccessMsg');
@@ -152,71 +144,117 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let valid = true;
 
+    // Required check
     if (input.hasAttribute('required') && !input.value.trim()) {
       valid = false;
     }
 
+    // Phone: 10 digits
     if (input.type === 'tel' && input.value.trim()) {
-      const phonePattern = /^[0-9]{10}$/;
-      if (!phonePattern.test(input.value.trim())) valid = false;
+      if (!/^[0-9]{10}$/.test(input.value.trim())) valid = false;
     }
 
+    // Email (optional but if filled, must be valid)
     if (input.type === 'email' && input.value.trim()) {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(input.value.trim())) valid = false;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) valid = false;
+    }
+
+    // Number fields must be >= min if defined
+    if (input.type === 'number' && input.value.trim()) {
+      const val = parseInt(input.value, 10);
+      const min = input.getAttribute('min');
+      if (min !== null && val < parseInt(min, 10)) valid = false;
     }
 
     valid ? clearError(group) : showError(group);
     return valid;
   }
 
-  // Validate on blur (when user leaves a field)
-  form.querySelectorAll('input, textarea').forEach(function (input) {
+  // Live validation on blur
+  form.querySelectorAll('input, textarea, select').forEach(function (input) {
     input.addEventListener('blur', function () { validateField(input); });
+    input.addEventListener('input', function () {
+      const group = input.closest('.form-group');
+      if (group && group.classList.contains('invalid')) validateField(input);
+    });
   });
 
-  form.addEventListener('submit', function (e) {
+  // ---- SUBMIT HANDLER ----
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    // 1) Validate all required + optional-but-filled fields
     let isFormValid = true;
     form.querySelectorAll('input[required], textarea[required]').forEach(function (input) {
       if (!validateField(input)) isFormValid = false;
     });
 
-    // Also validate optional email/phone if filled but wrong format
     const emailField = document.getElementById('emailAddress');
     if (emailField.value.trim() && !validateField(emailField)) isFormValid = false;
 
     if (!isFormValid) {
       successMsg.hidden = true;
-      const firstInvalid = form.querySelector('.form-group.invalid input, .form-group.invalid select');
+      const firstInvalid = form.querySelector('.form-group.invalid input, .form-group.invalid select, .form-group.invalid textarea');
       if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    // Build data object from form
+    // 2) Collect data
     const data = {
-      schoolName: document.getElementById('schoolName').value.trim(),
-      contactName: document.getElementById('contactName').value.trim(),
-      contactNumber: document.getElementById('contactNumber').value.trim(),
-      emailAddress: document.getElementById('emailAddress').value.trim(),
-      numStudents: document.getElementById('numStudents').value.trim(),
-      numTeachers: document.getElementById('numTeachers').value.trim(),
-      startLocation: document.getElementById('startLocation').value.trim(),
-      destination: document.getElementById('destination').value.trim(),
-      travelDate: document.getElementById('travelDate').value.trim(),
-      numDays: document.getElementById('numDays').value.trim(),
-      budgetPerStudent: document.getElementById('budgetPerStudent').value.trim(),
-      foodRequirement: document.getElementById('foodRequirement').value,
-      transportPref: document.getElementById('transportPref').value,
-      accommodationReq: document.getElementById('accommodationReq').value,
-      additionalReq: document.getElementById('additionalReq').value.trim()
+      schoolName:        document.getElementById('schoolName').value.trim(),
+      contactName:       document.getElementById('contactName').value.trim(),
+      contactNumber:     document.getElementById('contactNumber').value.trim(),
+      emailAddress:      document.getElementById('emailAddress').value.trim(),
+      numStudents:       document.getElementById('numStudents').value.trim(),
+      numTeachers:       document.getElementById('numTeachers').value.trim(),
+      startLocation:     document.getElementById('startLocation').value.trim(),
+      destination:       document.getElementById('destination').value.trim(),
+      travelDate:        document.getElementById('travelDate').value.trim(),
+      numDays:           document.getElementById('numDays').value.trim(),
+      budgetPerStudent:  document.getElementById('budgetPerStudent').value.trim(),
+      foodRequirement:   document.getElementById('foodRequirement').value,
+      transportPref:     document.getElementById('transportPref').value,
+      accommodationReq:  document.getElementById('accommodationReq').value,
+      additionalReq:     document.getElementById('additionalReq').value.trim()
     };
 
-    sendToWhatsApp(data);
+    // 3) Disable button (prevent double submit)
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
 
+    // 4) Save to Firestore
+    let firestoreOK = false;
+    try {
+      if (typeof window.saveQuoteToFirestore === 'function') {
+        await window.saveQuoteToFirestore(data);
+        firestoreOK = true;
+      } else {
+        console.warn('⚠️ saveQuoteToFirestore not available — Firebase SDK load nahi hua?');
+      }
+    } catch (err) {
+      console.error('❌ Firestore save failed:', err);
+    }
+
+    // 5) WhatsApp open (data loss protection — chahe Firestore fail ho, WhatsApp chalega)
+    try {
+      sendToWhatsApp(data);
+    } catch (err) {
+      console.error('❌ WhatsApp open failed:', err);
+    }
+
+    // 6) Success message + reset
     successMsg.hidden = false;
     form.reset();
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+
+    // Agar Firestore fail ho gaya to console me warn chhodo
+    if (!firestoreOK) {
+      console.warn('⚠️ Lead was sent to WhatsApp but NOT saved to Firestore. Check firebase-backend.js & rules.');
+    }
 
     setTimeout(function () { successMsg.hidden = true; }, 8000);
   });
@@ -739,7 +777,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Toggle Hindi font class
     bodyEl.classList.toggle('lang-hi', lang === 'hi');
 
-    // Highlight active language buttons (desktop + mobile)
+    // Highlight active language buttons
     langButtons.forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
@@ -753,7 +791,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Load saved language preference on page load (default: English)
+  // Load saved language preference (default English)
   const savedLang = localStorage.getItem('yatharth_lang') || 'en';
   applyLanguage(savedLang);
 
