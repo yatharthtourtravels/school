@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B2A4A">
 <title>Yatharth Tour and Travels | School Educational Tours in Himachal Pradesh</title>
 <meta name="description" content="Yatharth Tour and Travels plans customized school educational tours, student excursions, and group travel across Himachal Pradesh and beyond. Serving schools since 2022.">
 
@@ -40,7 +41,6 @@
       <a href="#documents" data-i18n="nav_documents">Documents</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
 
-      <!-- Mobile-only quick actions -->
       <div class="nav-mobile-extra">
         <div class="lang-switch" id="langSwitchMobile">
           <button type="button" class="lang-btn active" data-lang="en">English</button>
@@ -837,25 +837,25 @@
 
           <div class="form-group">
             <label for="contactNumber" data-i18n="form_contact_number">Contact Number *</label>
-            <input type="tel" id="contactNumber" name="contactNumber" required pattern="[0-9]{10}">
+            <input type="tel" id="contactNumber" name="contactNumber" required pattern="[0-9]{10}" inputmode="numeric" maxlength="10">
             <span class="error-msg" data-i18n="err_phone">Enter a valid 10-digit number.</span>
           </div>
 
           <div class="form-group">
             <label for="emailAddress" data-i18n="form_email">Email Address (optional)</label>
-            <input type="email" id="emailAddress" name="emailAddress">
+            <input type="email" id="emailAddress" name="emailAddress" inputmode="email">
             <span class="error-msg" data-i18n="err_email">Enter a valid email address.</span>
           </div>
 
           <div class="form-group">
             <label for="numStudents" data-i18n="form_students">Number of Students *</label>
-            <input type="number" id="numStudents" name="numStudents" min="1" required>
+            <input type="number" id="numStudents" name="numStudents" min="1" required inputmode="numeric">
             <span class="error-msg" data-i18n="err_required">This field is required.</span>
           </div>
 
           <div class="form-group">
             <label for="numTeachers" data-i18n="form_teachers">Number of Teachers / Staff *</label>
-            <input type="number" id="numTeachers" name="numTeachers" min="0" required>
+            <input type="number" id="numTeachers" name="numTeachers" min="0" required inputmode="numeric">
             <span class="error-msg" data-i18n="err_required">This field is required.</span>
           </div>
 
@@ -879,7 +879,7 @@
 
           <div class="form-group">
             <label for="numDays" data-i18n="form_days">Number of Days *</label>
-            <input type="number" id="numDays" name="numDays" min="1" required>
+            <input type="number" id="numDays" name="numDays" min="1" required inputmode="numeric">
             <span class="error-msg" data-i18n="err_required">This field is required.</span>
           </div>
 
