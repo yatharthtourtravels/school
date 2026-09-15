@@ -978,6 +978,72 @@
   </div>
 </footer>
 
+<!-- ============================= -->
+<!-- PLAN THIS TOUR — QUICK MODAL -->
+<!-- ============================= -->
+<div id="planTourModal" class="plan-modal" hidden aria-hidden="true">
+  <div class="plan-modal-backdrop" data-close-modal></div>
+
+  <div class="plan-modal-card" role="dialog" aria-modal="true" aria-labelledby="planModalTitle">
+
+    <button class="plan-modal-close" data-close-modal aria-label="Close popup">✕</button>
+
+    <div class="plan-modal-header">
+      <span class="plan-modal-badge">🎒 Quick Plan</span>
+      <h3 id="planModalTitle">Plan Your School Tour</h3>
+      <p class="plan-modal-dest">
+        <span>📍</span>
+        <span id="planModalDestination">—</span>
+      </p>
+      <p class="plan-modal-sub">Get a free customized quote within 24 hours.</p>
+    </div>
+
+    <form id="planTourForm" novalidate>
+      <input type="hidden" id="planDestination" name="destination">
+
+      <div class="plan-form-group">
+        <label for="planName">Your Name *</label>
+        <input type="text" id="planName" name="name" required
+               placeholder="e.g. Rajesh Kumar" autocomplete="name">
+        <span class="plan-error">Please enter your name.</span>
+      </div>
+
+      <div class="plan-form-group">
+        <label for="planPhone">Mobile Number *</label>
+        <input type="tel" id="planPhone" name="phone" required
+               pattern="[0-9]{10}" placeholder="10-digit mobile number"
+               autocomplete="tel" inputmode="numeric" maxlength="10">
+        <span class="plan-error">Enter a valid 10-digit number.</span>
+      </div>
+
+      <div class="plan-form-group">
+        <label for="planMessage">Anything else? (optional)</label>
+        <textarea id="planMessage" name="message" rows="2"
+                  placeholder="Number of students, travel dates, budget…"></textarea>
+      </div>
+
+      <div class="plan-modal-trust">
+        <span>✅ Free Quote</span>
+        <span>✅ No Spam</span>
+        <span>✅ 24hr Response</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block plan-submit-btn">
+        Get My Free Quote →
+      </button>
+
+      <p class="plan-modal-note">
+        We'll reply on WhatsApp. No payment required.
+      </p>
+    </form>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- SCRIPTS -->
+<!-- ============================= -->
+<script type="module" src="firebase-backend.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
