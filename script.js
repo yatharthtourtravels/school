@@ -301,8 +301,9 @@ document.addEventListener('DOMContentLoaded', function () {
       nav_cta: "Request a Quote",
 
       hero_kicker: "SCHOOL TOURS • EDUCATIONAL TRAVEL • STUDENT EXPERIENCES",
-      hero_title: "Every Journey Becomes a Lesson.",
-      hero_text: "Thoughtfully planned educational tours for Himachal Pradesh schools — with comfortable travel, flexible itineraries, and budgets designed around your students.",
+      hero_title: "School Educational Tours in Himachal Pradesh",
+      hero_tagline: "Every Journey Becomes a Lesson.",
+      hero_text: "Yatharth Tour and Travels plans customized school educational tours across Himachal Pradesh and North India — with comfortable group travel, flexible itineraries, and budgets designed around your students. For us, every journey becomes a lesson when learning meets real-world exploration.",
       hero_btn1: "Plan Your School Tour", hero_btn2: "Explore Destinations", hero_btn3: "Get a Custom Quote",
       trust1: "Serving Schools Since 2022*", trust2: "Customized Itineraries",
       trust3: "Transparent Budgeting", trust4: "Comfortable Group Travel",
@@ -316,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       st_kicker: "WHAT WE ORGANIZE",
       st_title: "Educational Tours Designed for Curious Minds.",
-      st_text: "Yatharth Tour and Travels organizes school educational tours, student group excursions, historical and cultural tours, nature and adventure trips, educational field visits, religious and cultural circuits, inter-state school tours, and fully customized school travel programs.",
+      st_text: "Yatharth Tour and Travels organizes school educational tours, student group excursions, historical and cultural tours, nature and adventure trips, educational field visits, religious and cultural circuits, inter-state school tours, and fully customized school travel programs across Himachal Pradesh and beyond.",
       st_card1_title: "Educational Experiences", st_card1_text: "Explore history, culture, nature, and new places.",
       st_card2_title: "Comfortable Group Travel", st_card2_text: "Travel arrangements planned around school groups.",
       st_card3_title: "Flexible Itineraries", st_card3_text: "Choose destinations, duration, activities, and travel style.",
@@ -324,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       about_kicker: "ABOUT US",
       about_title: "Travel Planning With Experience Since 2022.",
-      about_text: "Yatharth Tour and Travels has been operating since 2022, helping travelers and groups plan meaningful journeys. Our school-tour approach focuses on practical budgets, customized itineraries, comfortable travel arrangements, and memorable educational experiences.",
+      about_text: "Yatharth Tour and Travels has been operating since 2022, helping schools and groups plan meaningful journeys across Himachal Pradesh and North India. Our school-tour approach focuses on practical budgets, customized itineraries, comfortable travel arrangements, and memorable educational experiences. For us, every journey becomes a lesson — combining structured learning with exploration, culture, and real-world exposure.",
       timeline1: "Started Operations", timeline2: "School & Group Travel", timeline3: "Customized Tour Planning",
 
       pkg_kicker: "PRICING", pkg_title: "Travel Plans for Every School Budget.",
@@ -334,13 +335,16 @@ document.addEventListener('DOMContentLoaded', function () {
       pkg1_title: "Local Explorer", pkg1_price_label: "Starting from", per_student: "/student",
       pkg1_li1: "Local educational visits", pkg1_li2: "Nearby sightseeing",
       pkg1_li3: "One-day school excursions", pkg1_li4: "Short-distance group trips",
+      pkg1_btn: "Choose Local Explorer",
       pkg2_title: "Budget Discovery",
       pkg2_li1: "Budget-friendly school tours", pkg2_li2: "Short-distance destinations", pkg2_li3: "Basic group travel plans",
+      pkg2_btn: "Choose Budget Discovery",
       pkg3_title: "Educational Explorer", pkg_popular: "Popular",
       pkg3_li1: "Multi-day educational tours", pkg3_li2: "Intercity travel", pkg3_li3: "Historical and cultural sightseeing",
+      pkg3_btn: "Get Educational Explorer Quote",
       pkg4_title: "Grand Journey",
       pkg4_li1: "Long-distance school tours", pkg4_li2: "Extended multi-day itineraries", pkg4_li3: "Comprehensive travel experiences",
-      pkg_btn: "Plan This Tour",
+      pkg4_btn: "Choose Grand Journey Plan",
       pkg_final_note: "Final quotation is prepared after understanding your school's requirements.",
 
       fac_kicker: "WHAT WE PROVIDE", fac_title: "Everything Planned for a Smoother School Journey.",
@@ -381,6 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
       filter_all: "All", filter_himachal: "Himachal Pradesh", filter_punjab: "Chandigarh & Punjab",
       filter_delhi_agra: "Delhi & Agra", filter_uttarakhand: "Uttarakhand", filter_up: "Uttar Pradesh",
       filter_rajasthan: "Rajasthan", filter_circuits: "Circuit Tours",
+
       dest_shimla: "Colonial heritage, mountain views, and nature-based learning near the state capital.",
       dest_manali: "Adventure activities, valleys, rivers, and cultural sightseeing.",
       dest_dharamshala: "Tibetan culture, monasteries, and scenic learning experiences.",
@@ -405,7 +410,36 @@ document.addEventListener('DOMContentLoaded', function () {
       circuit1: "Kullu–Manali Nature & Adventure Tour", circuit2: "Shimla–Kufri Educational Tour",
       circuit3: "Delhi–Agra Historical Tour", circuit4: "Chandigarh–Amritsar Heritage Tour",
       circuit5: "Haridwar–Rishikesh Educational Tour", circuit6: "Rajasthan Forts & History Tour",
-      dest_btn: "Plan This Tour",
+
+      /* Unique destination CTA buttons */
+      dest_btn_shimla: "Plan Shimla Kufri Tour",
+      dest_btn_manali: "Plan Kullu Manali Tour",
+      dest_btn_dharamshala: "Plan Dharamshala Tour",
+      dest_btn_dalhousie: "Plan Dalhousie Khajjiar Tour",
+      dest_btn_kinnaur: "Plan Kinnaur Sangla Tour",
+      dest_btn_spiti: "Plan Spiti Valley Tour",
+      dest_btn_bir: "Plan Bir Billing Tour",
+      dest_btn_renuka: "Plan Renuka Ji Tour",
+      dest_btn_chandigarh: "Plan Chandigarh City Tour",
+      dest_btn_amritsar: "Plan Amritsar Heritage Tour",
+      dest_btn_wagah: "Plan Wagah Border Tour",
+      dest_btn_delhi: "Plan New Delhi Tour",
+      dest_btn_agra: "Plan Agra Historical Tour",
+      dest_btn_haridwar: "Plan Haridwar Rishikesh Tour",
+      dest_btn_mussoorie: "Plan Dehradun Mussoorie Tour",
+      dest_btn_vrindavan: "Plan Mathura Vrindavan Tour",
+      dest_btn_varanasi: "Plan Varanasi Tour",
+      dest_btn_ayodhya: "Plan Ayodhya Tour",
+      dest_btn_jaipur: "Plan Jaipur Ajmer Tour",
+      dest_btn_udaipur: "Plan Rajasthan Tour",
+      dest_btn_chittorgarh: "Plan Chittorgarh Tour",
+      dest_btn_circuit1: "Plan Kullu Manali Circuit",
+      dest_btn_circuit2: "Plan Shimla Kufri Circuit",
+      dest_btn_circuit3: "Plan Delhi Agra Circuit",
+      dest_btn_circuit4: "Plan Chandigarh Amritsar Circuit",
+      dest_btn_circuit5: "Plan Haridwar Rishikesh Circuit",
+      dest_btn_circuit6: "Plan Rajasthan Circuit",
+
       dest_note: "Routes, access, weather, permissions, and availability may affect the final tour plan.",
 
       td_kicker: "REAL SCHOOL TOURS", td_title: "School Tour Diaries",
@@ -420,14 +454,26 @@ document.addEventListener('DOMContentLoaded', function () {
       doc1_title: "Business Registration", doc1_text: "Company registration document.",
       doc2_title: "Travel Agency License / Authorization", doc2_text: "Business authorization document.",
       doc3_title: "Other Certificate / Credential", doc3_text: "Additional business credential.",
-      doc_view: "View Document",
+      doc_view: "View Company Certificate",
       doc_note: "Documents displayed on this page are provided by the company.",
 
       contact_kicker: "GET IN TOUCH", contact_title: "Let's Plan Your School's Next Journey.",
       contact_text: "Share your requirements and we'll help you explore suitable destinations, itineraries, and budget options.",
-      contact_email_title: "Email", contact_email_btn: "Send Email",
-      contact_call_title: "Call Us", contact_call_btn: "Call Now",
-      contact_wa_title: "WhatsApp", contact_wa_btn: "Chat on WhatsApp",
+
+      contact_email_title: "Email for School Tour Enquiries",
+      contact_email_btn: "Send Email Enquiry",
+
+      contact_call_title_main: "Call Us – Main Line",
+      contact_call_btn_main: "Call Main Line",
+
+      contact_call_title_alt: "Call Us – Alternate Line",
+      contact_call_btn_alt: "Call Alternate Line",
+
+      contact_wa_title_main: "WhatsApp – Primary",
+      contact_wa_btn_main: "Chat on WhatsApp – Primary",
+
+      contact_wa_title_alt: "WhatsApp – Alternate",
+      contact_wa_btn_alt: "Chat on WhatsApp – Alternate",
 
       form_title: "Request a Custom Quote", form_school: "School Name *",
       form_contact_person: "Principal / Teacher / Coordinator Name *", form_contact_number: "Contact Number *",
@@ -456,8 +502,9 @@ document.addEventListener('DOMContentLoaded', function () {
       nav_cta: "कोटेशन मांगें",
 
       hero_kicker: "स्कूल टूर • शैक्षिक यात्रा • छात्र अनुभव",
-      hero_title: "हर यात्रा एक सीख बन जाती है।",
-      hero_text: "हिमाचल प्रदेश के स्कूलों के लिए सोच-समझकर बनाए गए शैक्षिक टूर — आरामदायक यात्रा, लचीली योजना, और आपके छात्रों के अनुसार बजट के साथ।",
+      hero_title: "हिमाचल प्रदेश में स्कूल शैक्षिक टूर",
+      hero_tagline: "हर यात्रा एक सीख बन जाती है।",
+      hero_text: "यथार्थ टूर एंड ट्रैवल्स हिमाचल प्रदेश और उत्तर भारत में कस्टमाइज़्ड स्कूल शैक्षिक टूर की योजना बनाता है — आरामदायक समूह यात्रा, लचीली यात्रा योजना, और आपके छात्रों के अनुसार बजट के साथ। हमारे लिए हर यात्रा एक सीख बन जाती है जब पढ़ाई वास्तविक अनुभव से मिलती है।",
       hero_btn1: "अपना स्कूल टूर प्लान करें", hero_btn2: "गंतव्य देखें", hero_btn3: "कस्टम कोटेशन प्राप्त करें",
       trust1: "2022 से स्कूलों की सेवा में*", trust2: "कस्टमाइज़्ड यात्रा योजना",
       trust3: "पारदर्शी बजट", trust4: "आरामदायक समूह यात्रा",
@@ -479,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       about_kicker: "हमारे बारे में",
       about_title: "2022 से अनुभव के साथ यात्रा योजना।",
-      about_text: "यथार्थ टूर एंड ट्रैवल्स 2022 से संचालित है, जो यात्रियों और समूहों को सार्थक यात्राएं बनाने में मदद करता है। हमारा स्कूल-टूर दृष्टिकोण व्यावहारिक बजट, कस्टमाइज़्ड यात्रा योजना, आरामदायक यात्रा व्यवस्था और यादगार शैक्षिक अनुभवों पर केंद्रित है।",
+      about_text: "यथार्थ टूर एंड ट्रैवल्स 2022 से संचालित है, जो स्कूलों और समूहों को हिमाचल प्रदेश और उत्तर भारत में सार्थक यात्राएं बनाने में मदद करता है। हमारा स्कूल-टूर दृष्टिकोण व्यावहारिक बजट, कस्टमाइज़्ड यात्रा योजना, आरामदायक यात्रा व्यवस्था और यादगार शैक्षिक अनुभवों पर केंद्रित है। हमारे लिए हर यात्रा एक सीख बन जाती है — संरचित शिक्षा को अन्वेषण, संस्कृति और वास्तविक अनुभव के साथ जोड़कर।",
       timeline1: "संचालन शुरू किया", timeline2: "स्कूल और समूह यात्रा", timeline3: "कस्टमाइज़्ड टूर योजना",
 
       pkg_kicker: "मूल्य निर्धारण", pkg_title: "हर स्कूल बजट के लिए यात्रा योजनाएं।",
@@ -489,13 +536,16 @@ document.addEventListener('DOMContentLoaded', function () {
       pkg1_title: "लोकल एक्सप्लोरर", pkg1_price_label: "शुरुआती मूल्य", per_student: "/छात्र",
       pkg1_li1: "स्थानीय शैक्षिक दौरे", pkg1_li2: "नजदीकी दर्शनीय स्थल",
       pkg1_li3: "एक-दिवसीय स्कूल भ्रमण", pkg1_li4: "कम दूरी की समूह यात्राएं",
+      pkg1_btn: "लोकल एक्सप्लोरर चुनें",
       pkg2_title: "बजट डिस्कवरी",
       pkg2_li1: "बजट-अनुकूल स्कूल टूर", pkg2_li2: "कम दूरी के गंतव्य", pkg2_li3: "बुनियादी समूह यात्रा योजनाएं",
+      pkg2_btn: "बजट डिस्कवरी चुनें",
       pkg3_title: "एजुकेशनल एक्सप्लोरर", pkg_popular: "लोकप्रिय",
       pkg3_li1: "बहु-दिवसीय शैक्षिक टूर", pkg3_li2: "अंतर-शहर यात्रा", pkg3_li3: "ऐतिहासिक और सांस्कृतिक दर्शनीय स्थल",
+      pkg3_btn: "एजुकेशनल एक्सप्लोरर कोटेशन लें",
       pkg4_title: "ग्रैंड जर्नी",
       pkg4_li1: "लंबी दूरी के स्कूल टूर", pkg4_li2: "विस्तारित बहु-दिवसीय यात्रा योजना", pkg4_li3: "व्यापक यात्रा अनुभव",
-      pkg_btn: "यह टूर प्लान करें",
+      pkg4_btn: "ग्रैंड जर्नी प्लान चुनें",
       pkg_final_note: "आपके स्कूल की आवश्यकताओं को समझने के बाद अंतिम कोटेशन तैयार किया जाता है।",
 
       fac_kicker: "हम क्या प्रदान करते हैं", fac_title: "एक सहज स्कूल यात्रा के लिए हर चीज़ की योजना।",
@@ -536,6 +586,7 @@ document.addEventListener('DOMContentLoaded', function () {
       filter_all: "सभी", filter_himachal: "हिमाचल प्रदेश", filter_punjab: "चंडीगढ़ और पंजाब",
       filter_delhi_agra: "दिल्ली और आगरा", filter_uttarakhand: "उत्तराखंड", filter_up: "उत्तर प्रदेश",
       filter_rajasthan: "राजस्थान", filter_circuits: "सर्किट टूर",
+
       dest_shimla: "राज्य की राजधानी के पास औपनिवेशिक विरासत, पहाड़ी दृश्य और प्रकृति-आधारित शिक्षा।",
       dest_manali: "साहसिक गतिविधियां, घाटियां, नदियां और सांस्कृतिक दर्शनीय स्थल।",
       dest_dharamshala: "तिब्बती संस्कृति, मठ और दर्शनीय शिक्षण अनुभव।",
@@ -560,7 +611,35 @@ document.addEventListener('DOMContentLoaded', function () {
       circuit1: "कुल्लू–मनाली प्रकृति और साहसिक टूर", circuit2: "शिमला–कुफरी शैक्षिक टूर",
       circuit3: "दिल्ली–आगरा ऐतिहासिक टूर", circuit4: "चंडीगढ़–अमृतसर विरासत टूर",
       circuit5: "हरिद्वार–ऋषिकेश शैक्षिक टूर", circuit6: "राजस्थान किले और इतिहास टूर",
-      dest_btn: "यह टूर प्लान करें",
+
+      dest_btn_shimla: "शिमला कुफरी टूर प्लान करें",
+      dest_btn_manali: "कुल्लू मनाली टूर प्लान करें",
+      dest_btn_dharamshala: "धर्मशाला टूर प्लान करें",
+      dest_btn_dalhousie: "डलहौज़ी खज्जियार टूर प्लान करें",
+      dest_btn_kinnaur: "किन्नौर संगला टूर प्लान करें",
+      dest_btn_spiti: "स्पीति घाटी टूर प्लान करें",
+      dest_btn_bir: "बीर बिलिंग टूर प्लान करें",
+      dest_btn_renuka: "रेणुका जी टूर प्लान करें",
+      dest_btn_chandigarh: "चंडीगढ़ सिटी टूर प्लान करें",
+      dest_btn_amritsar: "अमृतसर विरासत टूर प्लान करें",
+      dest_btn_wagah: "वाघा बॉर्डर टूर प्लान करें",
+      dest_btn_delhi: "नई दिल्ली टूर प्लान करें",
+      dest_btn_agra: "आगरा ऐतिहासिक टूर प्लान करें",
+      dest_btn_haridwar: "हरिद्वार ऋषिकेश टूर प्लान करें",
+      dest_btn_mussoorie: "देहरादून मसूरी टूर प्लान करें",
+      dest_btn_vrindavan: "मथुरा वृंदावन टूर प्लान करें",
+      dest_btn_varanasi: "वाराणसी टूर प्लान करें",
+      dest_btn_ayodhya: "अयोध्या टूर प्लान करें",
+      dest_btn_jaipur: "जयपुर अजमेर टूर प्लान करें",
+      dest_btn_udaipur: "राजस्थान टूर प्लान करें",
+      dest_btn_chittorgarh: "चित्तौड़गढ़ टूर प्लान करें",
+      dest_btn_circuit1: "कुल्लू मनाली सर्किट प्लान करें",
+      dest_btn_circuit2: "शिमला कुफरी सर्किट प्लान करें",
+      dest_btn_circuit3: "दिल्ली आगरा सर्किट प्लान करें",
+      dest_btn_circuit4: "चंडीगढ़ अमृतसर सर्किट प्लान करें",
+      dest_btn_circuit5: "हरिद्वार ऋषिकेश सर्किट प्लान करें",
+      dest_btn_circuit6: "राजस्थान सर्किट प्लान करें",
+
       dest_note: "मार्ग, पहुंच, मौसम, अनुमति और उपलब्धता अंतिम टूर योजना को प्रभावित कर सकते हैं।",
 
       td_kicker: "वास्तविक स्कूल टूर", td_title: "स्कूल टूर डायरी",
@@ -575,14 +654,26 @@ document.addEventListener('DOMContentLoaded', function () {
       doc1_title: "व्यवसाय पंजीकरण", doc1_text: "कंपनी पंजीकरण दस्तावेज़।",
       doc2_title: "ट्रैवल एजेंसी लाइसेंस / प्राधिकरण", doc2_text: "व्यवसाय प्राधिकरण दस्तावेज़।",
       doc3_title: "अन्य प्रमाणपत्र / प्रमाण", doc3_text: "अतिरिक्त व्यावसायिक प्रमाण।",
-      doc_view: "दस्तावेज़ देखें",
+      doc_view: "कंपनी प्रमाणपत्र देखें",
       doc_note: "इस पृष्ठ पर दिखाए गए दस्तावेज़ कंपनी द्वारा प्रदान किए गए हैं।",
 
       contact_kicker: "संपर्क करें", contact_title: "आइए अपने स्कूल की अगली यात्रा की योजना बनाएं।",
       contact_text: "अपनी आवश्यकताएं साझा करें और हम आपको उपयुक्त गंतव्य, यात्रा योजना और बजट विकल्प खोजने में मदद करेंगे।",
-      contact_email_title: "ईमेल", contact_email_btn: "ईमेल भेजें",
-      contact_call_title: "हमें कॉल करें", contact_call_btn: "अभी कॉल करें",
-      contact_wa_title: "व्हाट्सएप", contact_wa_btn: "व्हाट्सएप पर चैट करें",
+
+      contact_email_title: "स्कूल टूर पूछताछ के लिए ईमेल",
+      contact_email_btn: "ईमेल पूछताछ भेजें",
+
+      contact_call_title_main: "हमें कॉल करें – मुख्य लाइन",
+      contact_call_btn_main: "मुख्य लाइन पर कॉल करें",
+
+      contact_call_title_alt: "हमें कॉल करें – वैकल्पिक लाइन",
+      contact_call_btn_alt: "वैकल्पिक लाइन पर कॉल करें",
+
+      contact_wa_title_main: "व्हाट्सएप – प्राथमिक",
+      contact_wa_btn_main: "व्हाट्सएप पर चैट करें – प्राथमिक",
+
+      contact_wa_title_alt: "व्हाट्सएप – वैकल्पिक",
+      contact_wa_btn_alt: "व्हाट्सएप पर चैट करें – वैकल्पिक",
 
       form_title: "कस्टम कोटेशन मांगें", form_school: "स्कूल का नाम *",
       form_contact_person: "प्रधानाचार्य / शिक्षक / समन्वयक का नाम *", form_contact_number: "संपर्क नंबर *",
@@ -611,8 +702,9 @@ document.addEventListener('DOMContentLoaded', function () {
       nav_cta: "Quote Mangwayein",
 
       hero_kicker: "SCHOOL TOURS • EDUCATIONAL TRAVEL • STUDENT EXPERIENCES",
-      hero_title: "Har Safar Ek Sabak Ban Jaata Hai.",
-      hero_text: "Himachal Pradesh ke schools ke liye achhe se planned educational tours — comfortable travel, flexible itinerary, aur students ke hisaab se banaya gaya budget ke saath.",
+      hero_title: "Himachal Pradesh Mein School Educational Tours",
+      hero_tagline: "Har Safar Ek Sabak Ban Jaata Hai.",
+      hero_text: "Yatharth Tour and Travels Himachal Pradesh aur North India mein customized school educational tours plan karta hai — comfortable group travel, flexible itinerary, aur students ke hisaab se banaya gaya budget ke saath. Hamare liye har safar ek sabak ban jaata hai jab learning real-world exploration se milti hai.",
       hero_btn1: "Apna School Tour Plan Karein", hero_btn2: "Destinations Dekhein", hero_btn3: "Custom Quote Lein",
       trust1: "2022 Se Schools Ki Service Mein*", trust2: "Customized Itinerary",
       trust3: "Transparent Budgeting", trust4: "Comfortable Group Travel",
@@ -634,7 +726,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       about_kicker: "HAMARE BAARE MEIN",
       about_title: "2022 Se Experience Ke Saath Travel Planning.",
-      about_text: "Yatharth Tour and Travels 2022 se operate kar raha hai, jo travelers aur groups ko meaningful journeys plan karne mein help karta hai. Hamara school-tour approach practical budget, customized itinerary, comfortable travel arrangements, aur memorable educational experiences par focus karta hai.",
+      about_text: "Yatharth Tour and Travels 2022 se operate kar raha hai, jo schools aur groups ko Himachal Pradesh aur North India mein meaningful journeys plan karne mein help karta hai. Hamara school-tour approach practical budget, customized itinerary, comfortable travel arrangements, aur memorable educational experiences par focus karta hai. Hamare liye har safar ek sabak ban jaata hai — structured learning ko exploration, culture, aur real-world exposure ke saath jodkar.",
       timeline1: "Operations Start Kiye", timeline2: "School & Group Travel", timeline3: "Customized Tour Planning",
 
       pkg_kicker: "PRICING", pkg_title: "Har School Budget Ke Liye Travel Plans.",
@@ -644,13 +736,16 @@ document.addEventListener('DOMContentLoaded', function () {
       pkg1_title: "Local Explorer", pkg1_price_label: "Starting from", per_student: "/student",
       pkg1_li1: "Local educational visits", pkg1_li2: "Nearby sightseeing",
       pkg1_li3: "One-day school excursions", pkg1_li4: "Short-distance group trips",
+      pkg1_btn: "Local Explorer Chunein",
       pkg2_title: "Budget Discovery",
       pkg2_li1: "Budget-friendly school tours", pkg2_li2: "Short-distance destinations", pkg2_li3: "Basic group travel plans",
+      pkg2_btn: "Budget Discovery Chunein",
       pkg3_title: "Educational Explorer", pkg_popular: "Popular",
       pkg3_li1: "Multi-day educational tours", pkg3_li2: "Intercity travel", pkg3_li3: "Historical aur cultural sightseeing",
+      pkg3_btn: "Educational Explorer Quote Lein",
       pkg4_title: "Grand Journey",
       pkg4_li1: "Long-distance school tours", pkg4_li2: "Extended multi-day itinerary", pkg4_li3: "Comprehensive travel experience",
-      pkg_btn: "Yeh Tour Plan Karein",
+      pkg4_btn: "Grand Journey Plan Chunein",
       pkg_final_note: "Aapke school ki requirements samajhne ke baad final quotation banaya jaata hai.",
 
       fac_kicker: "HUM KYA PROVIDE KARTE HAIN", fac_title: "Ek Smooth School Journey Ke Liye Sab Kuch Planned.",
@@ -691,6 +786,7 @@ document.addEventListener('DOMContentLoaded', function () {
       filter_all: "All", filter_himachal: "Himachal Pradesh", filter_punjab: "Chandigarh & Punjab",
       filter_delhi_agra: "Delhi & Agra", filter_uttarakhand: "Uttarakhand", filter_up: "Uttar Pradesh",
       filter_rajasthan: "Rajasthan", filter_circuits: "Circuit Tours",
+
       dest_shimla: "State capital ke paas colonial heritage, mountain views, aur nature-based learning.",
       dest_manali: "Adventure activities, valleys, rivers, aur cultural sightseeing.",
       dest_dharamshala: "Tibetan culture, monasteries, aur scenic learning experience.",
@@ -715,7 +811,35 @@ document.addEventListener('DOMContentLoaded', function () {
       circuit1: "Kullu–Manali Nature & Adventure Tour", circuit2: "Shimla–Kufri Educational Tour",
       circuit3: "Delhi–Agra Historical Tour", circuit4: "Chandigarh–Amritsar Heritage Tour",
       circuit5: "Haridwar–Rishikesh Educational Tour", circuit6: "Rajasthan Forts & History Tour",
-      dest_btn: "Yeh Tour Plan Karein",
+
+      dest_btn_shimla: "Shimla Kufri Tour Plan Karein",
+      dest_btn_manali: "Kullu Manali Tour Plan Karein",
+      dest_btn_dharamshala: "Dharamshala Tour Plan Karein",
+      dest_btn_dalhousie: "Dalhousie Khajjiar Tour Plan Karein",
+      dest_btn_kinnaur: "Kinnaur Sangla Tour Plan Karein",
+      dest_btn_spiti: "Spiti Valley Tour Plan Karein",
+      dest_btn_bir: "Bir Billing Tour Plan Karein",
+      dest_btn_renuka: "Renuka Ji Tour Plan Karein",
+      dest_btn_chandigarh: "Chandigarh City Tour Plan Karein",
+      dest_btn_amritsar: "Amritsar Heritage Tour Plan Karein",
+      dest_btn_wagah: "Wagah Border Tour Plan Karein",
+      dest_btn_delhi: "New Delhi Tour Plan Karein",
+      dest_btn_agra: "Agra Historical Tour Plan Karein",
+      dest_btn_haridwar: "Haridwar Rishikesh Tour Plan Karein",
+      dest_btn_mussoorie: "Dehradun Mussoorie Tour Plan Karein",
+      dest_btn_vrindavan: "Mathura Vrindavan Tour Plan Karein",
+      dest_btn_varanasi: "Varanasi Tour Plan Karein",
+      dest_btn_ayodhya: "Ayodhya Tour Plan Karein",
+      dest_btn_jaipur: "Jaipur Ajmer Tour Plan Karein",
+      dest_btn_udaipur: "Rajasthan Tour Plan Karein",
+      dest_btn_chittorgarh: "Chittorgarh Tour Plan Karein",
+      dest_btn_circuit1: "Kullu Manali Circuit Plan Karein",
+      dest_btn_circuit2: "Shimla Kufri Circuit Plan Karein",
+      dest_btn_circuit3: "Delhi Agra Circuit Plan Karein",
+      dest_btn_circuit4: "Chandigarh Amritsar Circuit Plan Karein",
+      dest_btn_circuit5: "Haridwar Rishikesh Circuit Plan Karein",
+      dest_btn_circuit6: "Rajasthan Circuit Plan Karein",
+
       dest_note: "Routes, access, weather, permissions, aur availability final tour plan ko affect kar sakte hain.",
 
       td_kicker: "REAL SCHOOL TOURS", td_title: "School Tour Diaries",
@@ -730,14 +854,26 @@ document.addEventListener('DOMContentLoaded', function () {
       doc1_title: "Business Registration", doc1_text: "Company registration document.",
       doc2_title: "Travel Agency License / Authorization", doc2_text: "Business authorization document.",
       doc3_title: "Other Certificate / Credential", doc3_text: "Additional business credential.",
-      doc_view: "Document Dekhein",
+      doc_view: "Company Certificate Dekhein",
       doc_note: "Is page par dikhaye gaye documents company dwara provide kiye gaye hain.",
 
       contact_kicker: "SAMPARK KAREIN", contact_title: "Chaliye Aapke School Ki Next Journey Plan Karein.",
       contact_text: "Apni requirements share karein aur hum aapko suitable destinations, itinerary, aur budget options explore karne mein madad karenge.",
-      contact_email_title: "Email", contact_email_btn: "Email Bhejein",
-      contact_call_title: "Humein Call Karein", contact_call_btn: "Abhi Call Karein",
-      contact_wa_title: "WhatsApp", contact_wa_btn: "WhatsApp Par Chat Karein",
+
+      contact_email_title: "School Tour Enquiries Ke Liye Email",
+      contact_email_btn: "Email Enquiry Bhejein",
+
+      contact_call_title_main: "Humein Call Karein – Main Line",
+      contact_call_btn_main: "Main Line Par Call Karein",
+
+      contact_call_title_alt: "Humein Call Karein – Alternate Line",
+      contact_call_btn_alt: "Alternate Line Par Call Karein",
+
+      contact_wa_title_main: "WhatsApp – Primary",
+      contact_wa_btn_main: "WhatsApp Par Chat Karein – Primary",
+
+      contact_wa_title_alt: "WhatsApp – Alternate",
+      contact_wa_btn_alt: "WhatsApp Par Chat Karein – Alternate",
 
       form_title: "Custom Quote Mangwayein", form_school: "School Ka Naam *",
       form_contact_person: "Principal / Teacher / Coordinator Ka Naam *", form_contact_number: "Contact Number *",
@@ -781,6 +917,9 @@ document.addEventListener('DOMContentLoaded', function () {
     langButtons.forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+
+    // Update <html lang> attribute dynamically (helps accessibility)
+    document.documentElement.setAttribute('lang', lang === 'hi' ? 'hi' : 'en');
 
     localStorage.setItem('yatharth_lang', lang);
   }
