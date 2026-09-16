@@ -376,8 +376,19 @@ p, li, span {
   font-size: 1.9rem;
   font-weight: 800;
   color: var(--white);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   line-height: 1.2;
+}
+
+/* NEW: Emotional tagline (kept separate from H1 for SEO clarity) */
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
 }
 
 .hero-text {
@@ -1330,6 +1341,7 @@ body.modal-open { overflow: hidden; }
     gap: 40px;
   }
   .hero-title { font-size: 2.4rem; }
+  .hero-tagline { font-size: 1.2rem; }
   .hero-buttons {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1404,6 +1416,7 @@ body.modal-open { overflow: hidden; }
     padding: 80px 24px 70px 24px;
   }
   .hero-title { font-size: 3.1rem; }
+  .hero-tagline { font-size: 1.35rem; }
   .hero-text { font-size: 1.1rem; }
   .hero-content { order: 1; }
   .hero-image { order: 2; }
@@ -1523,6 +1536,7 @@ body.modal-open { overflow: hidden; }
   .section-text { font-size: 0.94rem; }
 
   .hero-title { font-size: 1.65rem; }
+  .hero-tagline { font-size: 1rem; }
   .hero-text { font-size: 0.94rem; }
   .hero-grid { padding: 32px 14px; }
 
